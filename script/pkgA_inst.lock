@@ -1,0 +1,28 @@
+{
+ "graph_lock": {
+  "nodes": {
+   "1": {
+    "ref": "pkgA/0.1#43481f5c04d483ab94afe3f6aef2cb70",
+    "options": "fPIC=True\nshared=False",
+    "package_id": "d32d902d1e755b8c0f821ca7bbd9b34262073e15",
+    "prev": "03404a0e2ec41ec3795bd69748404632",
+    "modified": true,
+    "build_requires": [
+     "2"
+    ],
+    "context": "host"
+   },
+   "2": {
+    "ref": "buildReqA/0.1#e206d7e36e41bb0e2028794d4ed9af20",
+    "options": "fPIC=True\nshared=True",
+    "package_id": "7e6be7c8d5adcd8d64b7994c7abe408c97981629",
+    "prev": "adbd2b1f0007c821c817eb3bc349bde5",
+    "modified": true,
+    "context": "host"
+   }
+  },
+  "revisions_enabled": true
+ },
+ "version": "0.4",
+ "profile_host": "[settings]\narch=x86_64\ncompiler=gcc\ncompiler.libcxx=libstdc++11\ncompiler.version=9.3\nos=Linux\n[options]\nbuildReqA:shared=True\n[build_requires]\n[env]\n"
+}
