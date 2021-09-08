@@ -2,7 +2,7 @@
  "graph_lock": {
   "nodes": {
    "1": {
-    "ref": "pkgA/0.1#2048c08990cfe92bf80135884bd6fbbc",
+    "ref": "pkgA/0.1#c860d3d6dcc17d79203551f1bf62e424",
     "options": "fPIC=True\nshared=False",
     "package_id": "1da1fd84e1427571e726eab54f420170d027b118",
     "build_requires": [
@@ -11,14 +11,15 @@
     "context": "host"
    },
    "2": {
-    "ref": "buildReqA/0.1#71b48037bea528ed0de316fd90782051",
+    "ref": "buildReqA/0.1#82aad2fd2a587788b91b37e9663f73b2",
     "options": "fPIC=True\nshared=False",
-    "package_id": "1da1fd84e1427571e726eab54f420170d027b118",
-    "context": "host"
+    "package_id": "d32d902d1e755b8c0f821ca7bbd9b34262073e15",
+    "context": "build"
    }
   },
   "revisions_enabled": true
  },
  "version": "0.4",
- "profile_host": "[settings]\narch=armv8\ncompiler=gcc\ncompiler.libcxx=libstdc++11\ncompiler.version=9.3\nos=Linux\n[options]\nbuildReqA:shared=True\n[build_requires]\n[env]\n"
+ "profile_host": "[settings]\narch=armv8\ncompiler=gcc\ncompiler.libcxx=libstdc++11\ncompiler.version=9.3\nos=Linux\n[options]\nbuildReqA:shared=True\n[build_requires]\n[env]\n",
+ "profile_build": "[settings]\narch=x86_64\ncompiler=gcc\ncompiler.libcxx=libstdc++11\ncompiler.version=9.3\nos=Linux\n[options]\n[build_requires]\n[env]\n"
 }

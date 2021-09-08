@@ -19,6 +19,10 @@ class PkgAConan(ConanFile):
         if self.settings.os == "Windows":
             del self.options.fPIC
 
+    def configure(self):
+        # Override value True from profile
+        self.options["buildReqA"].shared=False
+
     def build(self):
         self.run('touch pkgA.txt')
 

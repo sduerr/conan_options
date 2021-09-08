@@ -11,15 +11,12 @@ class BuildReqAConan(ConanFile):
     topics = ("<Put some tag here>", "<here>", "<and here>")
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = {"shared": False, "fPIC": True}
+    default_options = {"fPIC": True}
     exports_sources = "src/*"
 
     def config_options(self):
         if self.settings.os == "Windows":
             del self.options.fPIC
-
-    def configure(self):
-        self.options.shared=False
 
     def build(self):
         self.run('touch buildReqA.txt')
