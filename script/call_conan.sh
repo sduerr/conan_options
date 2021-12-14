@@ -10,7 +10,7 @@ set -ex
 while getopts "s" option;
 do
     case "${option}" in
-        o) SINGLE_CALL="true";;
+        s) SINGLE_CALL="true";;
     esac
 done
 
@@ -25,11 +25,13 @@ conan lock create --reference pkgA/0.1@_/_ --build missing --lockfile-out ${LOCK
 
 #########################
 # Works
-if [ -n "$SINGLE_CALL" ]; then
+if [[ -n "$SINGLE_CALL" ]]; then
+    echo "Single call option"
     conan install pkgA/0.1@_/_ --lockfile ${LOCKFILE_INIT} --lockfile-out=${LOCKFILE_INST} --build=missing
 else
 #########################
 # The step-by-step invocation leads to "ERROR: buildReqA/0.1: Locked options do not match computed options"
+    echo "Multiple call option"
     conan lock build-order ${LOCKFILE_INIT}
     conan install buildReqA/0.1@_/_ --lockfile=${LOCKFILE_INIT} --lockfile-out=${LOCKFILE_INST} --build=buildReqA/0.1 --build-require --lockfile-node-id=2
     conan install pkgA/0.1@_/_ --lockfile=${LOCKFILE_INIT} --lockfile-out=${LOCKFILE_INST} --build=pkgA/0.1
